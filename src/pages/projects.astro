@@ -1,0 +1,54 @@
+---
+import PageHeading from "../components/page-heading.astro";
+import Project from "../components/project.astro";
+import Layout from "../layouts/main.astro";
+import { getCollection } from "astro:content";
+
+const { count } = Astro.props;
+const allProjects = await getCollection("project");
+
+function parseDate(dateStr) {
+  const [month, day, year] = dateStr.split(" ");
+  return new Date(`${month} ${parseInt(day)}, ${year}`);
+}
+
+const sortedProjects = allProjects
+  .map((project) => ({
+    ...project,
+    date: parseDate(project.data.dateFormatted),
+  }))
+  .sort((a, b) => a.date.getTime() - b.date.getTime());
+
+const projects = sortedProjects.slice(0, count).map((project) => {
+  return {
+    ...(project.data || {}),
+    url: `/project/${project.slug}`,
+  };
+});
+---
+
+<Layout title="My Projects">
+  <section class="relative z-20 max-w-2xl mx-auto my-12 px-7 lg:px-0">
+    <PageHeading
+      title="My Projects"
+      description="Here are some of the current projects I've been working on. I really enjoy creating new projects and coming up with new ideas. I'm always working on something new, so check back often!"
+    />
+
+    <div
+      class="z-50 grid items-stretch w-full grid-cols-1 my-8 gap-7 sm:gap-5 sm:grid-cols-2"
+    >
+      {
+        projects.map((project) => {
+          return (
+            <Project
+              name={project.title}
+              description={project.description}
+              image={project.image}
+              url={project.url}
+            />
+          )
+        })
+      }
+    </div>
+  </section>
+</Layout>
