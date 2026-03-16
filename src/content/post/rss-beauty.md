@@ -52,5 +52,5 @@ docker run -d --name rss-beauty -p 4321:4321 ghcr.io/ccbikai/rss.beauty:main
 
 ## Sponsor
 
-1. [Follow me on 𝕏](https://404.li/kai)
+1. [Follow me on LinkedIn](https://www.linkedin.com/in/amarcutura)
 1. [Sponsor me on GitHub](https://github.com/sponsors/ccbikai)
