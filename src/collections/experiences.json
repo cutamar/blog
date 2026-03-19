@@ -4,41 +4,41 @@
 		"role": "Senior DevOps Engineer",
 		"company": "Zürcher Kantonalbank",
 		"description": "Working on DevOps engineering, automation, infrastructure reliability, and enterprise platform operations in a banking environment.",
-		"logo": "/assets/images/experiences/zkb.ico"
+		"logo": "/assets/images/experiences/zkb_logo.jpg"
 	},
 	{
 		"dates": "September 2020 · March 2025",
 		"role": "Lead Backend/DevOps Engineer & CTO",
 		"company": "Brands Are Live AG",
 		"description": "Led backend and DevOps engineering, defined system architecture, built and scaled development teams, optimized APIs and infrastructure, automated CI/CD pipelines, and delivered scalable mobile and web platforms serving over 150,000 daily users.",
-		"logo": "/assets/images/experiences/brandsarelive.ico"
+		"logo": "/assets/images/experiences/bal_logo.jpg"
 	},
 	{
 		"dates": "May 2020 · September 2022",
 		"role": "Lead Developer & Founder",
 		"company": "Nethletic GmbH",
 		"description": "Founded and developed a sports influencer platform, leading backend, frontend, mobile, DevOps, and product development from idea to MVP and first clients.",
-		"logo": "/assets/images/experiences/nethletic.ico"
+		"logo": "/assets/images/experiences/nethletic_logo.jpg"
 	},
 	{
 		"dates": "February 2020 · August 2020",
 		"role": "Full Stack Engineer",
 		"company": "IBM",
 		"description": "Developed internal tools to improve operational efficiency, reduce workflow bottlenecks, and streamline communication between teams using backend, frontend, and CI/CD technologies.",
-		"logo": "/assets/images/experiences/ibm.ico"
+		"logo": "/assets/images/experiences/ibm_logo.jpg"
 	},
 	{
 		"dates": "February 2019 · January 2020",
 		"role": "Full-Stack Developer & Machine Learning Engineer",
 		"company": "Intel Corporation",
 		"description": "Worked on internal tools for memory design optimization, using TensorFlow and neural networks to improve compiler outputs while developing full-stack applications and CI/CD pipelines.",
-		"logo": "/assets/images/experiences/intel.ico"
+		"logo": "/assets/images/experiences/intel_logo.jpg"
 	},
 	{
 		"dates": "December 2015 · December 2018",
 		"role": "Full Stack Engineer",
 		"company": "Innoactive GmbH",
 		"description": "Worked on VR, AR, and XR projects using Unity3D and Unreal Engine, later transitioning into backend development, DevOps, Kubernetes, infrastructure automation, and scalable product engineering.",
-		"logo": "/assets/images/experiences/innoactive.ico"
+		"logo": "/assets/images/experiences/innoactive_logo.jpg"
 	}
 ]
