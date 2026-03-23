@@ -4,10 +4,6 @@
 		"url": "/"
 	},
 	{
-		"name": "Case Studies",
-		"url": "/projects"
-	},
-	{
 		"name": "Blog",
 		"url": "/posts"
 	},
