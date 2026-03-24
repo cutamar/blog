@@ -1,13 +1,22 @@
-# Aria Template
+# Personal Blog
 
-This is a personal blog, portfolio, or blog template created for [Astro](https://astro.build).
+This repository contains the source code and content for my personal engineering blog.
 
-Astro port of [aria](https://github.com/static-templates/aria).
+I write about backend engineering, DevOps, system design, AI research, and practical software architecture. The goal is to share technical deep dives, lessons learned, and project write-ups from building real systems.
 
-![Aria Template Cover Photo](https://github.com/ccbikai/astro-aria/blob/main/public/assets/images/cover.png?raw=true)
+## Topics
 
-You can install this theme with the [Astro](https://astro.build) command like so:
+- Backend engineering
+- DevOps and infrastructure
+- CI/CD and automation
+- System design
+- AI research notes
+- Python projects
+- Finance
 
-```js
-npm create astro@latest -- --template ccbikai/astro-aria
-```
+## Tech Stack
+
+- Astro
+- Markdown / MDX
+- TypeScript
+- Static site generation
