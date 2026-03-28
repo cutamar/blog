@@ -2,7 +2,7 @@
 layout: ../../layouts/post.astro
 title: "Building an Exchange - Part 3: The Matching Engine"
 description: "Exploring how a Python matching engine processes orders, sweeps the order book, handles fills, and turns user commands into authoritative events."
-dateFormatted: Mar 25, 2026
+dateFormatted: Mar 27, 2026
 ---
 
 In the previous parts, we defined the deterministic [Data Primitives](./01_domain_primitives.md) and built [The Limit Order Book](./02_limit_order_book.md).
