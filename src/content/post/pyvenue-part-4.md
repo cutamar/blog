@@ -5,7 +5,7 @@ description: "Managing balances, reserved funds, trade settlement, and maker-tak
 dateFormatted: Mar 28, 2026
 ---
 
-In [Part 3](./03_matching_engine.md), we explored how the deterministic Matching Engine handles matching between trading counterparties. We established exactly how user Commands are parsed, validated, and transformed into historical Events.
+In [Part 3](/post/pyvenue-part-3), we explored how the deterministic Matching Engine handles matching between trading counterparties. We established exactly how user Commands are parsed, validated, and transformed into historical Events.
 
 But matching algorithmic orders is of little use if an exchange doesn't verify that the users actually possess the funds required to settle those trades. Before an order rests on the order book or executes a match, the engine must validate the user's balances.
 
@@ -160,7 +160,7 @@ However, this design requires single-threaded execution inside the component. If
 
 This is why the `Engine` consumes `Commands` in order from an atomic Queue.
 
-In the final **Part 5**, we will explore how this boundary between incoming "Commands" and settled "Events" enables state reconstruction and replay: **Event Sourcing**.
+In the final [Part 5](/post/pyvenue-part-5), we will explore how this boundary between incoming "Commands" and settled "Events" enables state reconstruction and replay: **Event Sourcing**.
 
 
 --- 

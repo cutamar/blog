@@ -5,7 +5,7 @@ description: "Exploring how a Python matching engine organizes bids, asks, price
 dateFormatted: Mar 25, 2026
 ---
 
-Welcome back! In [Part 1](./01_domain_primitives.md), we established the deterministic foundation of our exchange engine: integer quantities (`Qty`) to prevent fractional drift, strict `Price` allocations to ensure clean ticks, and strongly typed identifiers that distinguish `Assets` from `Instruments`.
+Welcome back! In [Part 1](/post/pyvenue-part-1), we established the deterministic foundation of our exchange engine: integer quantities (`Qty`) to prevent fractional drift, strict `Price` allocations to ensure clean ticks, and strongly typed identifiers that distinguish `Assets` from `Instruments`.
 
 Now, what actually happens when tens of thousands of users place buy and sell orders onto a venue at the same millisecond? How does the matching engine organize, sort, and evaluate who gets to trade with whom, and at what matched price?
 
@@ -194,7 +194,7 @@ Most retail platforms render **Level 2 Market Depth**. This data feed ignores in
 
 In contrast, institutional quant systems consume **Level 3 Market Depth**, which requires streaming every individual `RestingOrder` creation and cancellation event directly to the consumer. This allows quant firms to simulate and mirror the exact internal `OrderBook` queue priority locally in their own co-located servers.
 
-In **Part 3**, we will move beyond the static state of the order book. We will build the active component that actually sweeps the book and matches Takers into Makers: **The Matching Engine**.
+In [Part 3](/post/pyvenue-part-3), we will move beyond the static state of the order book. We will build the active component that actually sweeps the book and matches Takers into Makers: **The Matching Engine**.
 
 ---
 

@@ -5,7 +5,7 @@ description: "Exploring how a Python matching engine processes orders, sweeps th
 dateFormatted: Mar 27, 2026
 ---
 
-In the previous parts, we defined the deterministic [Data Primitives](./01_domain_primitives.md) and built [The Limit Order Book](./02_limit_order_book.md).
+In the previous parts, we defined the deterministic [Data Primitives](/post/pyvenue-part-1) and built [The Limit Order Book](/post/pyvenue-part-2).
 
 Now, it is time to put everything together to build the component that consumes user requests, evaluates the market, and matches buyers and sellers: **The Matching Engine**.
 
@@ -163,7 +163,7 @@ To prevent this, the matching engine performs a self-trade check during order sw
 
 To state that more clearly: these conflicting resting orders are automatically removed from the order book, and the engine emits the corresponding `OrderCanceled` and `FundsReleased` events. This prevents the user from accidentally executing an illegal wash trade.
 
-In **Part 4**, we will look at how the engine tracks and settles the monetary side of executed trades: **State & Balances**.
+In [Part 4](/post/pyvenue-part-4), we will look at how the engine tracks and settles the monetary side of executed trades: **State & Balances**.
 
 --- 
 

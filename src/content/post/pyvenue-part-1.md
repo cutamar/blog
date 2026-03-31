@@ -177,7 +177,7 @@ By strictly forbidding floating-point math and wrapping our primitive variable t
 
 We have successfully constructed a deterministic and mathematically sound foundation.
 
-In **Part 2**, we will take these primitives and use them to construct the optimized heart of the exchange: **The Limit Order Book**. We will explore how thousands of concurrent orders are organized, sorted, and prioritized with microsecond latency to ensure fair execution matching using Price-Time priority.
+In [Part 2](/post/pyvenue-part-2), we will take these primitives and use them to construct the optimized heart of the exchange: **The Limit Order Book**. We will explore how thousands of concurrent orders are organized, sorted, and prioritized with microsecond latency to ensure fair execution matching using Price-Time priority.
 
 ---
 
