@@ -3,6 +3,7 @@ layout: ../../layouts/post.astro
 title: "Building an Exchange - Part 3: The Matching Engine"
 description: "Exploring how a Python matching engine processes orders, sweeps the order book, handles fills, and turns user commands into authoritative events."
 dateFormatted: Mar 27, 2026
+tags: ["engineering", "python", "finance"]
 ---
 
 In the previous parts, we defined the deterministic [Data Primitives](/post/pyvenue-part-1) and built [The Limit Order Book](/post/pyvenue-part-2).

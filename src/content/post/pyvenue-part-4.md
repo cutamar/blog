@@ -3,6 +3,7 @@ layout: ../../layouts/post.astro
 title: "Building an Exchange - Part 4: State, Balances, and Fees"
 description: "Managing balances, reserved funds, trade settlement, and maker-taker fees inside a deterministic Python exchange engine."
 dateFormatted: Mar 28, 2026
+tags: ["engineering", "python", "finance"]
 ---
 
 In [Part 3](/post/pyvenue-part-3), we explored how the deterministic Matching Engine handles matching between trading counterparties. We established exactly how user Commands are parsed, validated, and transformed into historical Events.

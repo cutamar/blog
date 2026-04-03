@@ -3,6 +3,7 @@ layout: ../../layouts/post.astro
 title: "Building an Exchange - Part 1: Domain Primitives"
 description: "Designing the foundational types behind a deterministic Python matching engine, including ticks, lots, assets, instruments, and market sides."
 dateFormatted: Mar 21, 2026
+tags: ["engineering", "python", "finance"]
 ---
 
 Welcome to this series on how to build a financial matching engine from scratch! If you're a software engineer, you've likely interacted with financial systems, maybe even algorithmic trading APIs. You have probably placed orders, checked balances, and consumed websocket streams of market data. But what actually happens on the *inside* of an exchange? How does a venue guarantee fairness, determinism, and high throughput when thousands of bots are trying to abuse the system at the same time?

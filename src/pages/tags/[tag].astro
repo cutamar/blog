@@ -1,0 +1,41 @@
+---
+import { getCollection } from 'astro:content';
+import Layout from '../../layouts/main.astro';
+import PageHeading from '../../components/page-heading.astro';
+import PostsLoop from '../../components/posts-loop.astro';
+
+export async function getStaticPaths() {
+  const allPosts = await getCollection('post');
+  const tagsSet = new Set<string>();
+  allPosts.forEach((post) => {
+    if (post.data.tags) {
+      post.data.tags.forEach((tag) => tagsSet.add(tag));
+    }
+  });
+  const uniqueTags = Array.from(tagsSet);
+
+  return uniqueTags.map((tag) => {
+    const filteredPosts = allPosts.filter((post) => post.data.tags?.includes(tag));
+    return {
+      params: { tag },
+      props: { posts: filteredPosts },
+    };
+  });
+}
+
+const { tag } = Astro.params;
+const { posts } = Astro.props;
+---
+
+<Layout title={`Posts tagged with ${tag}`}>
+  <section class="relative z-20 max-w-2xl mx-auto my-12 px-7 lg:px-0">
+    <PageHeading
+      title={`Tag: ${tag}`}
+      description={`Explore all articles tagged with "${tag}".`}
+    />
+
+    <div class="z-50 flex flex-col items-stretch w-full gap-5 my-8">
+      <PostsLoop count="999999999" posts={posts} />
+    </div>
+  </section>
+</Layout>

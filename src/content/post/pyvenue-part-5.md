@@ -3,6 +3,7 @@ layout: ../../layouts/post.astro
 title: "Building an Exchange - Part 5: Determinism & Event Sourcing"
 description: "Using event sourcing, replay, snapshots, and immutable logs to make a Python matching engine deterministic, auditable, and recoverable."
 dateFormatted: Mar 30, 2026
+tags: ["engineering", "python", "finance"]
 ---
 
 In the previous parts, we explored how a Matching Engine safely receives external **Commands** (like "buy 10 BTC"), validates them synchronously against the Order Book and the user's Ledger Balance, and produces immutable **Events** (like "10 BTC Trade Occurred").

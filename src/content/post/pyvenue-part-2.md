@@ -3,6 +3,7 @@ layout: ../../layouts/post.astro
 title: "Building an Exchange - Part 2: The Limit Order Book"
 description: "Exploring how a Python matching engine organizes bids, asks, price levels, FIFO queues, and cancellations using price-time priority."
 dateFormatted: Mar 25, 2026
+tags: ["engineering", "python", "finance"]
 ---
 
 Welcome back! In [Part 1](/post/pyvenue-part-1), we established the deterministic foundation of our exchange engine: integer quantities (`Qty`) to prevent fractional drift, strict `Price` allocations to ensure clean ticks, and strongly typed identifiers that distinguish `Assets` from `Instruments`.
