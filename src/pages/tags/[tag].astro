@@ -3,6 +3,7 @@ import { getCollection } from 'astro:content';
 import Layout from '../../layouts/main.astro';
 import PageHeading from '../../components/page-heading.astro';
 import PostsLoop from '../../components/posts-loop.astro';
+import TagsList from '../../components/tags-list.astro';
 
 export async function getStaticPaths() {
   const allPosts = await getCollection('post');
@@ -33,6 +34,8 @@ const { posts } = Astro.props;
       title={`Tag: ${tag}`}
       description={`Explore all articles tagged with "${tag}".`}
     />
+
+    <TagsList activeTag={tag} />
 
     <div class="z-50 flex flex-col items-stretch w-full gap-5 my-8">
       <PostsLoop count="999999999" posts={posts} />

@@ -1,0 +1,65 @@
+---
+import { getCollection } from "astro:content";
+
+export interface Props {
+  activeTag?: string;
+}
+
+const { activeTag } = Astro.props;
+
+const allPosts = await getCollection("post");
+const tagCounts: Record<string, number> = {};
+allPosts.forEach((post) => {
+  if (post.data.tags) {
+    post.data.tags.forEach((tag) => {
+      tagCounts[tag] = (tagCounts[tag] || 0) + 1;
+    });
+  }
+});
+
+const sortedTags = Object.keys(tagCounts).sort((a, b) => {
+  if (tagCounts[b] !== tagCounts[a]) {
+    return tagCounts[b] - tagCounts[a];
+  }
+  return a.localeCompare(b);
+});
+---
+
+{sortedTags.length > 0 && (
+  <div class="z-50 flex flex-wrap gap-2 mt-2 mb-8">
+    <a
+      href="/posts"
+      class={`px-3 py-1.5 text-sm font-semibold rounded-full border transition-colors flex items-center gap-1.5 ${
+        !activeTag
+          ? "border-neutral-800 bg-neutral-800 text-white dark:bg-white dark:text-neutral-900"
+          : "border-neutral-200 dark:border-neutral-700 bg-neutral-50 dark:bg-neutral-800 text-neutral-600 dark:text-neutral-300 hover:bg-neutral-100 dark:hover:bg-neutral-700"
+      }`}
+    >
+      All
+    </a>
+    {sortedTags.map((tag) => {
+      const isActive = tag === activeTag;
+      return (
+        <a
+          href={`/tags/${tag}`}
+          class={`px-3 py-1.5 text-sm font-semibold rounded-full border transition-colors flex items-center gap-1.5 ${
+            isActive
+              ? "border-neutral-800 bg-neutral-800 text-white dark:bg-white dark:text-neutral-900"
+              : "border-neutral-200 dark:border-neutral-700 bg-neutral-50 dark:bg-neutral-800 text-neutral-600 dark:text-neutral-300 hover:bg-neutral-100 dark:hover:bg-neutral-700"
+          }`}
+        >
+          {tag}
+          <span
+            class={`px-1.5 py-0.5 rounded-full text-[10px] font-bold leading-none ${
+              isActive
+                ? "bg-neutral-600 dark:bg-neutral-300 text-neutral-200 dark:text-neutral-600"
+                : "bg-neutral-200 dark:bg-neutral-700 text-neutral-500 dark:text-neutral-400"
+            }`}
+          >
+            {tagCounts[tag]}
+          </span>
+        </a>
+      );
+    })}
+  </div>
+)}

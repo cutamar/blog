@@ -4,22 +4,7 @@ import PageHeading from "../components/page-heading.astro";
 import PostsLoop from "../components/posts-loop.astro";
 import Layout from "../layouts/main.astro";
 
-const allPosts = await getCollection("post");
-const tagCounts: Record<string, number> = {};
-allPosts.forEach((post) => {
-  if (post.data.tags) {
-    post.data.tags.forEach((tag) => {
-      tagCounts[tag] = (tagCounts[tag] || 0) + 1;
-    });
-  }
-});
-
-const sortedTags = Object.keys(tagCounts).sort((a, b) => {
-  if (tagCounts[b] !== tagCounts[a]) {
-    return tagCounts[b] - tagCounts[a];
-  }
-  return a.localeCompare(b);
-});
+import TagsList from "../components/tags-list.astro";
 ---
 
 <Layout title="Blog Posts">
@@ -29,21 +14,7 @@ const sortedTags = Object.keys(tagCounts).sort((a, b) => {
       description="Fresh takes, proven techniques, AI research insights, and technical deep dives — this blog is where I share lessons learned, tools I trust, and engineering solutions that just work."
     />
 
-    {sortedTags.length > 0 && (
-      <div class="z-50 flex flex-wrap gap-2 mt-2 mb-8">
-        {sortedTags.map((tag) => (
-          <a
-            href={`/tags/${tag}`}
-            class="px-3 py-1.5 text-sm font-semibold rounded-full border border-neutral-200 dark:border-neutral-700 bg-neutral-50 dark:bg-neutral-800 text-neutral-600 dark:text-neutral-300 hover:bg-neutral-100 dark:hover:bg-neutral-700 transition-colors flex items-center gap-1.5"
-          >
-            {tag}
-            <span class="px-1.5 py-0.5 rounded-full bg-neutral-200 dark:bg-neutral-700 text-[10px] text-neutral-500 dark:text-neutral-400 font-bold leading-none">
-              {tagCounts[tag]}
-            </span>
-          </a>
-        ))}
-      </div>
-    )}
+    <TagsList />
 
     <div class="z-50 flex flex-col items-stretch w-full gap-5 my-8">
       <PostsLoop count="999999999" />
